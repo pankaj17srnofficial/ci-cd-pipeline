@@ -2,12 +2,22 @@ package com.exe.cicd.cicdautomationservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
+@RestController
+@RequestMapping(value = "/")
 public class CicdAutomationServiceApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CicdAutomationServiceApplication.class, args);
+	}
+
+	@GetMapping(value = "message")
+	public String message(){
+		return "ci-cd service is launched !!";
 	}
 
 }
